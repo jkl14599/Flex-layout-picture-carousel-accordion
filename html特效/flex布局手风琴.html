@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        ul,li{
+            list-style: none;
+        }
+        ul{
+            display: flex;
+            width: 80%;
+            height: 600px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            /* background: violet; */
+        }
+        ul li{
+            display: flex;
+            width: 20%;
+            height: 600px;
+            border: solid #fff 1px;
+        }
+        ul li:nth-child(1){
+            flex: 1;
+            background: url('images/1b9eb5245fd9bf6cef8758b14b0f22bd.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        ul li:nth-child(2){
+            flex: 0.2;
+            background: url('images/3acb900bd61d19d8.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        ul li:nth-child(3){
+            flex: 0.2;
+            background: url('images/t0103b4ad445444f243.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        ul li:nth-child(4){
+            flex: 0.2;
+            background: url('images/t01cf12d03a3b4ccd1d.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        ul li:nth-child(1):hover{
+            flex: 1.5;
+            transform: all 1s esae;
+        }
+        ul li:nth-child(2):hover{
+            flex: 1.5;
+            transform: all 1s esae;
+        }
+        ul li:nth-child(3):hover{
+            flex: 1.5;
+            transform: all 1s esae;
+        }
+        ul li:nth-child(4):hover{
+            flex: 1.5;
+            transform: all 1s esae;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        var jsq=null;
+        var zs=0;
+        jsq=setInterval(function(){
+            if (zs<3) {
+                zs=zs+1;
+                $('ul li').css('flex','0.2').eq(zs).css('flex','1.5');
+                $('ul li').css('transform','').eq(zs).css('transform','all 1s esae');
+            } else {
+                zs=0;
+                $('ul li').css('flex','0.2').eq(zs).css('flex','1.5');
+                $('ul li').css('transform','').eq(zs).css('transform','all 1s esae');
+            }
+        },2500);
+        $('ul li').mouseenter(function(){
+            clearInterval(jsq);
+            $('ul li').css('flex','0.2');
+            $(this).css('flex','1.5');
+            $('ul li').css('transform','');
+            $(this).css('transform','all 1s esae');
+        });
+        $('ul li').mouseleave(function(){
+            jsq=setInterval(function(){
+            if (zs<3) {
+                zs=zs+1;
+                $('ul li').css('flex','0.2').eq(zs).css('flex','1.5');
+                $('ul li').css('transform','').eq(zs).css('transform','all 1s esae');
+            } else {
+                zs=0;
+                $('ul li').css('flex','0.2').eq(zs).css('flex','1.5');
+                $('ul li').css('transform','').eq(zs).css('transform','all 1s esae');
+            }
+        },2500);
+        });
+
+    </script>
+</body>
+</html>
